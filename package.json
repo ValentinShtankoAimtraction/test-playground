@@ -8,13 +8,15 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "lint-css": "stylelint src/**/*.css"
+    "lint-css": "stylelint src/**/*.scss",
+    "prettier": "prettier --write src/**/*.{js,ts,scss}"
   },
   "private": true,
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "ng build --aot true"
+      "pre-push": "ng build --aot true",
+      "commit-mgs": "sh ./pre-commit-hook.sh"
     }
   },
   "dependencies": {
